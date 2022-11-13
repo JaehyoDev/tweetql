@@ -28,6 +28,7 @@ const typeDefs = gql`
         id: ID!
         firstName: String!
         lastName: String!
+        fullName: String!
     }
     type Tweet {
         id: ID!
@@ -73,6 +74,11 @@ const resolvers = {
             // filter의 조건을 만족하는 것만 tweets에 넣어준다.
             // 삭제하려는 id와 같은 id를 가진 tweet을 제외한 tweet들을 넣어준다.
             return true;
+        }
+    },
+    User: {
+        fullName() {
+            return "hello!";
         }
     }
 }
